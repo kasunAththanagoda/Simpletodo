@@ -1,7 +1,10 @@
 <template>
 
 
-   <div class="text-center">
+
+
+
+   <div class="text-center"> 
     <v-dialog
       v-model="dialog"
       width="600"
@@ -24,9 +27,9 @@
         </v-card-title>
 
         <v-card-text>
-          <v-form class="px-3">
-            <v-text-field label="Title" v-model="title" prepend-icon="mdi-format-title" ></v-text-field>
-            <v-textarea label="information" v-model="info" prepend-icon="mdi-information"></v-textarea>
+          <v-form class="px-3" ref="form">
+            <v-text-field label="Title" v-model="title" prepend-icon="mdi-format-title" :rules="inputRules"></v-text-field>
+            <v-textarea label="information" v-model="info" prepend-icon="mdi-information" :rules="inputRules"></v-textarea>
             
             <v-menu
         ref="menu"
@@ -45,6 +48,8 @@
             readonly
             v-bind="attrs"
             v-on="on"
+            :rules="inputRules"
+            
           ></v-text-field>
         </template>
         <v-date-picker
@@ -91,12 +96,18 @@ export default {
             info:'',
             date:'',
             menu: false,
+
+            inputRules:[
+                v => v && v.length >= 0 || "empty field"
+            ]
         }
     },
 
     methods:{
         submit(){
-
+            if(this.$refs.form.validate()){
+                console.log(this.title, this.info)
+            }
         }
     },
     
