@@ -36,13 +36,13 @@
   </div>
 
 
-      <v-btn flat class="grey lighten-3">
+      <v-btn  text class="grey--text">
         <span>sign out</span>
         <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" class="indigo" temporary app>
+    <v-navigation-drawer v-model="drawer" color="#6F61C0" temporary app>
       <v-row align-center>
       <v-col >
         <v-avatar size="100" class="ma-5"><img src="/img 1.jpg" alt="avatar image"></v-avatar>
