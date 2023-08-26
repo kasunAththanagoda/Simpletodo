@@ -30,7 +30,7 @@
         ref="menu"
         v-model="menu"
         :close-on-content-click="false"
-        :return-value.sync="date"
+
         transition="scale-transition"
         offset-y
         min-width="auto"
@@ -49,11 +49,12 @@
         </template>
         <v-date-picker
           v-model="date"
+          @input="menu = false"
           no-title
           scrollable
         >
           <v-spacer></v-spacer>
-          <v-btn
+          <!-- <v-btn
             text
             color="primary"
             @click="menu = false"
@@ -66,7 +67,7 @@
             @click="$refs.menu.save(date)"
           >
             OK
-          </v-btn>
+          </v-btn> -->
         </v-date-picker>
       </v-menu>
 
@@ -123,12 +124,9 @@ export default {
           console.log('added to db');
           this.isLoading=false;
           this.dialog=false;
+          this.$emit("projectAdded");
          });
-              // db.collection('projects').add(project).then(()=>{
-              //   this.isLoading=false;
-              //   this.dialog=false;
-              //   console.log('added to db');
-              // })
+ 
 
             }
         }
