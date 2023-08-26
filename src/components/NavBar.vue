@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar flat app >
+    <v-toolbar text app >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Todo</span>
@@ -13,8 +13,8 @@
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-        flat
-          color="grey lighten-3"
+        text
+          color="grey "
           v-bind="attrs"
           v-on="on"
         >

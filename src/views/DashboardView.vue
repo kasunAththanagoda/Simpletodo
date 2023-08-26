@@ -83,7 +83,7 @@ export default {
       projects: [
         {
           title: "Design a new website",
-          person: "The Net Ninja",
+          person: "Kasun",
           due: "1st Jan 2019",
           status: "ongoing",
           content:
