@@ -1,9 +1,4 @@
 <template>
-
-
-
-
-
    <div class="text-center"> 
     <v-dialog
       v-model="dialog"
@@ -29,7 +24,7 @@
         <v-card-text>
           <v-form class="px-3" ref="form">
             <v-text-field label="Title" v-model="title" prepend-icon="mdi-format-title" :rules="inputRules"></v-text-field>
-            <v-textarea label="information" v-model="info" prepend-icon="mdi-information" :rules="inputRules"></v-textarea>
+            <v-textarea label="content" v-model="info" prepend-icon="mdi-information" :rules="inputRules"></v-textarea>
             
             <v-menu
         ref="menu"
@@ -107,6 +102,7 @@ export default {
         submit(){
             if(this.$refs.form.validate()){
                 console.log(this.title, this.info)
+
             }
         }
     },
