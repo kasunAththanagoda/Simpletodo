@@ -2,12 +2,12 @@
   <nav>
 
     <v-snackbar v-model="snackbar" top color="success" rounded="pill" timeout="1500">
-      <sapn class="mr-8">Project added successfully!!</sapn>
+      <span class="mr-8">Project added successfully!!</span>
       <v-btn text @click="snackbar=false">close</v-btn>
     </v-snackbar>
 
 
-    <v-toolbar text app >
+    <v-toolbar text  >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Todo</span>

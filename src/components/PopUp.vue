@@ -106,7 +106,7 @@ export default {
     },
 
     methods:{
-        submit(){
+        async submit(){
             if(this.$refs.form.validate()){
               this.isLoading=true;
                 console.log(this.title, this.info)
@@ -119,15 +119,20 @@ export default {
           status: 'ongoing'
         }
 
-        addDoc(collection(db, "projects"), project)
+
+          await addDoc(collection(db, "projects"), project)
         .then(() => { 
           console.log('added to db');
           this.isLoading=false;
           this.dialog=false;
           this.$emit("projectAdded");
-         });
- 
-
+         })
+         .catch((error)=>{
+          console.log(error)
+         }      
+         );  
+         
+         this.$refs.form.reset();
             }
         }
     },

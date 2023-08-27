@@ -4,9 +4,9 @@
   
     <v-main class="grey lighten-4">
       <NavBar></NavBar>
-      <v-content class="mx-4 mb-4">
+      <v-main class="mx-4 mb-4 mt-6">
         <router-view/>
-      </v-content>
+      </v-main>
       
     </v-main>
   </v-app>
